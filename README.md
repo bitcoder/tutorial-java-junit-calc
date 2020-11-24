@@ -1,5 +1,6 @@
-# tutorial-java-junit-calc
-Tutorial with tests implemented in Java and JUnit with Xray integration, using GitHub Actions.
+# Tutorial with tests implemented in Java and JUnit with Xray integration, using GitHub Actions.
+
+This is a basic tutorial with some tests implemented in Java and JUnit.
 
 The idea is to show how you can easily integrate you CI/CD pipeline implemented using GitHub Actions and have visibility of your automation results in Jira, using [Xray](https://getxray.app/).
 
