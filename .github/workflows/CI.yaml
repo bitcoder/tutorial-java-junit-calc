@@ -12,4 +12,9 @@ jobs:
         java-version: '1.8'
     - name: Build with Maven
       run: mvn clean compile test --file pom.xml
-      
+    - name: submit results to Xray
+      env:
+        JIRA_SERVER_URL: {{ secrets.jira_server_url }}  
+        JIRA_USERNAME: {{ secrets.jira_username }}  
+        JIRA_PASSWORD: {{ secrets.jira_password }}
+      run: curl -H "Content-Type: multipart/form-data" -u $JIRA_USERNAME:$JIRA_PASSWORD -F "file=@target/surefire-reports/TEST-com.xpand.java.CalcTest.xml" "$JIRA_SERVER_URL/rest/raven/1.0/import/execution/junit?projectKey=CALC"
