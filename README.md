@@ -1,2 +1,2 @@
 # tutorial-java-junit-calc
-Tutorial with tests implemented in Java and JUnit with Xray integraiton
+Tutorial with tests implemented in Java and JUnit with Xray integration
