@@ -19,7 +19,7 @@ jobs:
     - name: Build with Maven
       run: mvn clean compile test --file pom.xml
     - name: Submit results to Xray
-      uses: mikepenz/xray-action@0.9.4
+      uses: mikepenz/xray-action@v0.9.4
       with:
         username: ${{ secrets.client_id }}
         password: ${{ secrets.client_secret }}
