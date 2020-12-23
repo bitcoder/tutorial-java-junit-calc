@@ -1,4 +1,4 @@
-name: CI (Jira cloud example)
+name: CI (Jira cloud example with GH action)
 on: [push]
 jobs:
   build:
