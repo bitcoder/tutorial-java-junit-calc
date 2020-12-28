@@ -1,4 +1,4 @@
-name: CI (Jira on-premises example)
+name: CI (Jira on-premises example using action)
 on: [push]
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
         username: ${{ secrets.jira_username }}
         password: ${{ secrets.jira_password }}
         xrayBaseUrl: ${{ secrets.jira_server_url }}
-        xrayCloud: false
+        xrayCloud: "false"
         testFormat: "junit"
         testPaths: "**/surefire-reports/*.xml"
         projectKey: "CALC"
