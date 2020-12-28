@@ -1,0 +1,30 @@
+name: CI (Jira on-premises example)
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+        
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Java
+      uses: actions/setup-java@v1
+      with:
+        java-version: '1.8'  
+    - name: Cache Maven packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+    - name: Build with Maven
+      run: mvn clean compile test --file pom.xml
+    - name: Submit results to Xray
+      uses: mikepenz/xray-action@v0.9.5
+      with:
+        username: ${{ secrets.jira_username }}
+        password: ${{ secrets.jira_password }}
+        xrayBaseUrl: ${{ secrets.jira_server_url }}
+        xrayCloud: false
+        testFormat: "junit"
+        testPaths: "**/surefire-reports/*.xml"
+        projectKey: "CALC"
