@@ -13,6 +13,7 @@ jobs:
       script:
         - 'echo xt1: $XRAY_TOKEN'
         - 'echo curl -H "Content-Type: text/xml" -H "Authorization: Bearer $XRAY_TOKEN" --data @target/surefire-reports/TEST-com.xpand.java.CalcTest.xml  "https://xray.cloud.xpand-it.com/api/v2/import/execution/junit?projectKey=CALC"'
+        - 'curl -H "Content-Type: text/xml" -H "Authorization: Bearer $XRAY_TOKEN" --data @target/surefire-reports/TEST-com.xpand.java.CalcTest.xml  "https://xray.cloud.xpand-it.com/api/v2/import/execution/junit?projectKey=CALC"'
         - 'echo curl -H "Content-Type: text/xml" -H "Authorization: Bearer \$XRAY_TOKEN" --data @target/surefire-reports/TEST-com.xpand.java.CalcTest.xml  "https://xray.cloud.xpand-it.com/api/v2/import/execution/junit?projectKey=CALC"'
         - 'echo curl -H "Content-Type: text/xml" -H "Authorization: Bearer ${XRAY_TOKEN}" --data @target/surefire-reports/TEST-com.xpand.java.CalcTest.xml  "https://xray.cloud.xpand-it.com/api/v2/import/execution/junit?projectKey=CALC"'
    
