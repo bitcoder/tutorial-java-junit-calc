@@ -5,3 +5,13 @@ jdk:
 cache:
   directories:
   - "$HOME/.cache"
+  
+jobs:
+  include:
+    - stage: test
+      script: mvn clean compile test --file pom.xml
+    - stage: report to Xray
+      script:
+        -  XRAY_TOKEN=$(curl -H "Content-Type: application/json" -X POST --data "{ \"client_id\": \"$CLIENT_ID\",\"client_secret\": \"$CLIENT_SECRET\" }" https://xray.cloud.xpand-it.com/api/v1/authenticate| tr -d '"')
+        - 'curl -H "Content-Type: text/xml" -H "Authorization: Bearer $XRAY_TOKEN" --data @target/surefire-reports/TEST-com.xpand.java.CalcTest.xml  "https://xray.cloud.xpand-it.com/api/v2/import/execution/junit?projectKey=CALC"'
+        
