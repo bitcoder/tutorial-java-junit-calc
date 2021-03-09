@@ -1,3 +1,5 @@
+[![Build Status](https://www.travis-ci.com/bitcoder/tutorial-java-junit-calc.svg?branch=main)](https://www.travis-ci.com/bitcoder/tutorial-java-junit-calc)
+
 # Tutorial with tests implemented in Java and JUnit with Xray integration, using GitHub Actions.
 
 This is a basic tutorial with some tests implemented in Java and JUnit.
