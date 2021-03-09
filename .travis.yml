@@ -13,4 +13,4 @@ jobs:
     - stage: report to Xray
       script:
         - 'curl -H "Content-Type: text/xml" -H "Authorization: Bearer $XRAY_TOKEN" --data @target/surefire-reports/TEST-com.xpand.java.CalcTest.xml  "https://xray.cloud.xpand-it.com/api/v2/import/execution/junit?projectKey=CALC"'
-        
+     
