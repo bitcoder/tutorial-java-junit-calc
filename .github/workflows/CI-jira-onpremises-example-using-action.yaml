@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
         
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Set up Java
       uses: actions/setup-java@v1
       with:
@@ -19,7 +19,7 @@ jobs:
     - name: Build with Maven
       run: mvn clean compile test --file pom.xml
     - name: Submit results to Xray
-      uses: mikepenz/xray-action@v2.4.0
+      uses: mikepenz/xray-action@v3.0.4
       with:
         username: ${{ secrets.jira_username }}
         password: ${{ secrets.jira_password }}
