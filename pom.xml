@@ -61,35 +61,14 @@
             <scope>test</scope>
     	</dependency>
 
-        <dependency>
-                <groupId>com.xpandit.xray</groupId>
-                <artifactId>xray-maven-plugin</artifactId>
-                <version>1.0.0</version>
-            	<scope>test</scope>
-	</dependency>
-    </dependencies>
 
-<repositories>
-       	<repository>
-      		<id>xpandit</id>
-   		<name>xpand-releases</name>
-		<url>https://maven.xpand-it.com/artifactory/releases</url>
-		<releases>
-			<enabled>true</enabled>
-		</releases>
-	</repository>
-</repositories>
+    </dependencies>
 
 
     <reporting>
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>com.xpandit.xray</groupId>
-                <artifactId>xray-maven-plugin</artifactId>
-                <version>1.0.0</version>
             </plugin>
         </plugins>
     </reporting>
